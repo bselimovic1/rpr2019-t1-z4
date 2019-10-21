@@ -10,14 +10,15 @@ public class Supermarket {
         return artikli;
     }
     public Artikl izbaciArtiklSaKodom(String kod){
-        Artikl izbaceni=new Artikl();
+        Artikl izbaceni=null;
         for(int i=0;i<artikli.length;i++){
             if(artikli[i].getKod().equals(kod)){
-                izbaceni=artikli[i];
+                izbaceni=new Artikl(artikli[i]);
                 artikli[i]=null;
+                return izbaceni;
             }
         }
-        return izbaceni;
+        return null;
     }
     public boolean dodajArtikl(Artikl art){
         boolean dodat= false;
@@ -27,6 +28,6 @@ public class Supermarket {
                 return true;
             }
         }
-        return dodat;
+        return false;
     }
 }

@@ -5,11 +5,15 @@ public class Artikl {
     private int cijena;
     private String kod;
 
-    public Artikl(){}
     public Artikl(String naziv, int cijena, String kod) {
         this.naziv = naziv;
         this.cijena = cijena;
         this.kod = kod;
+    }
+    public Artikl(Artikl a){
+        naziv=a.naziv;
+        cijena=a.cijena;
+        kod=a.kod;
     }
 
     public String getNaziv() {
