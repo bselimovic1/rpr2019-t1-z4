@@ -10,11 +10,7 @@ public class Artikl {
         this.cijena = cijena;
         this.kod = kod;
     }
-    public Artikl(Artikl a){
-        naziv=a.naziv;
-        cijena=a.cijena;
-        kod=a.kod;
-    }
+
 
     public String getNaziv() {
         return naziv;
@@ -30,5 +26,10 @@ public class Artikl {
         return kod;
     }
 
+    @Override
+    public boolean equals(Object o){
+        Artikl a= (Artikl) o;
+        return naziv.equals(a.naziv);
+    }
 
 }
